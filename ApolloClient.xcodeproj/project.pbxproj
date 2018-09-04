@@ -9,7 +9,9 @@
 /* Begin PBXBuildFile section */
 		98A401B58132DD7B3BAC1026 /* Pods_ApolloClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FF414D3CCEE7C72CB1ECDDF /* Pods_ApolloClient.framework */; };
 		F21178A3213DE3CE00AD5B70 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = F21178A2213DE3CE00AD5B70 /* API.swift */; };
-		F28216D5213E13A900EB1177 /* Posts.graphql in Resources */ = {isa = PBXBuildFile; fileRef = F28216D4213E13A900EB1177 /* Posts.graphql */; };
+		F28216D5213E13A900EB1177 /* fetchPosts.graphql in Resources */ = {isa = PBXBuildFile; fileRef = F28216D4213E13A900EB1177 /* fetchPosts.graphql */; };
+		F28216D7213E285100EB1177 /* fetchUsers.graphql in Resources */ = {isa = PBXBuildFile; fileRef = F28216D6213E285100EB1177 /* fetchUsers.graphql */; };
+		F28216DA213E30CD00EB1177 /* UsersController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F28216D9213E30CD00EB1177 /* UsersController.swift */; };
 		F2E6AFEC213DD2C70050FC07 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2E6AFEB213DD2C70050FC07 /* AppDelegate.swift */; };
 		F2E6AFEE213DD2C70050FC07 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2E6AFED213DD2C70050FC07 /* ViewController.swift */; };
 		F2E6AFF1213DD2C70050FC07 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F2E6AFEF213DD2C70050FC07 /* Main.storyboard */; };
@@ -23,7 +25,9 @@
 		2FF414D3CCEE7C72CB1ECDDF /* Pods_ApolloClient.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ApolloClient.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		52BE1808E79AC4E579958212 /* Pods-ApolloClient.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ApolloClient.release.xcconfig"; path = "Pods/Target Support Files/Pods-ApolloClient/Pods-ApolloClient.release.xcconfig"; sourceTree = "<group>"; };
 		F21178A2213DE3CE00AD5B70 /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
-		F28216D4213E13A900EB1177 /* Posts.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = Posts.graphql; sourceTree = "<group>"; };
+		F28216D4213E13A900EB1177 /* fetchPosts.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = fetchPosts.graphql; sourceTree = "<group>"; };
+		F28216D6213E285100EB1177 /* fetchUsers.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = fetchUsers.graphql; sourceTree = "<group>"; };
+		F28216D9213E30CD00EB1177 /* UsersController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersController.swift; sourceTree = "<group>"; };
 		F2E6AFE8213DD2C70050FC07 /* ApolloClient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ApolloClient.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F2E6AFEB213DD2C70050FC07 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F2E6AFED213DD2C70050FC07 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -66,9 +70,19 @@
 		F28216D3213E139400EB1177 /* queries */ = {
 			isa = PBXGroup;
 			children = (
-				F28216D4213E13A900EB1177 /* Posts.graphql */,
+				F28216D4213E13A900EB1177 /* fetchPosts.graphql */,
+				F28216D6213E285100EB1177 /* fetchUsers.graphql */,
 			);
 			path = queries;
+			sourceTree = "<group>";
+		};
+		F28216D8213E30A900EB1177 /* controllers */ = {
+			isa = PBXGroup;
+			children = (
+				F2E6AFED213DD2C70050FC07 /* ViewController.swift */,
+				F28216D9213E30CD00EB1177 /* UsersController.swift */,
+			);
+			path = controllers;
 			sourceTree = "<group>";
 		};
 		F2E6AFDF213DD2C70050FC07 = {
@@ -92,11 +106,11 @@
 		F2E6AFEA213DD2C70050FC07 /* ApolloClient */ = {
 			isa = PBXGroup;
 			children = (
+				F28216D8213E30A900EB1177 /* controllers */,
 				F28216D3213E139400EB1177 /* queries */,
 				F2E6B001213DDA0B0050FC07 /* schema.json */,
 				F21178A2213DE3CE00AD5B70 /* API.swift */,
 				F2E6AFEB213DD2C70050FC07 /* AppDelegate.swift */,
-				F2E6AFED213DD2C70050FC07 /* ViewController.swift */,
 				F2E6AFEF213DD2C70050FC07 /* Main.storyboard */,
 				F2E6AFF2213DD2C90050FC07 /* Assets.xcassets */,
 				F2E6AFF4213DD2C90050FC07 /* LaunchScreen.storyboard */,
@@ -167,8 +181,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				F2E6B002213DDA0B0050FC07 /* schema.json in Resources */,
+				F28216D7213E285100EB1177 /* fetchUsers.graphql in Resources */,
 				F2E6AFF6213DD2C90050FC07 /* LaunchScreen.storyboard in Resources */,
-				F28216D5213E13A900EB1177 /* Posts.graphql in Resources */,
+				F28216D5213E13A900EB1177 /* fetchPosts.graphql in Resources */,
 				F2E6AFF3213DD2C90050FC07 /* Assets.xcassets in Resources */,
 				F2E6AFF1213DD2C70050FC07 /* Main.storyboard in Resources */,
 			);
@@ -236,6 +251,7 @@
 			files = (
 				F2E6AFEE213DD2C70050FC07 /* ViewController.swift in Sources */,
 				F21178A3213DE3CE00AD5B70 /* API.swift in Sources */,
+				F28216DA213E30CD00EB1177 /* UsersController.swift in Sources */,
 				F2E6AFEC213DD2C70050FC07 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
