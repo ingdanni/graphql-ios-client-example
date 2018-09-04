@@ -7,6 +7,10 @@
 //
 
 import UIKit
+import Apollo
+
+let url = URL(string: "https://sheltered-dawn-55270.herokuapp.com/graphql")
+let apollo = ApolloClient(url: url!)
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {

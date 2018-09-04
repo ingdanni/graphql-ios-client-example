@@ -8,17 +8,22 @@
 
 /* Begin PBXBuildFile section */
 		98A401B58132DD7B3BAC1026 /* Pods_ApolloClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FF414D3CCEE7C72CB1ECDDF /* Pods_ApolloClient.framework */; };
+		F21178A3213DE3CE00AD5B70 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = F21178A2213DE3CE00AD5B70 /* API.swift */; };
+		F28216D5213E13A900EB1177 /* Posts.graphql in Resources */ = {isa = PBXBuildFile; fileRef = F28216D4213E13A900EB1177 /* Posts.graphql */; };
 		F2E6AFEC213DD2C70050FC07 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2E6AFEB213DD2C70050FC07 /* AppDelegate.swift */; };
 		F2E6AFEE213DD2C70050FC07 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2E6AFED213DD2C70050FC07 /* ViewController.swift */; };
 		F2E6AFF1213DD2C70050FC07 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F2E6AFEF213DD2C70050FC07 /* Main.storyboard */; };
 		F2E6AFF3213DD2C90050FC07 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F2E6AFF2213DD2C90050FC07 /* Assets.xcassets */; };
 		F2E6AFF6213DD2C90050FC07 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F2E6AFF4213DD2C90050FC07 /* LaunchScreen.storyboard */; };
+		F2E6B002213DDA0B0050FC07 /* schema.json in Resources */ = {isa = PBXBuildFile; fileRef = F2E6B001213DDA0B0050FC07 /* schema.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		0AA3BC46E6CE74D27134F346 /* Pods-ApolloClient.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ApolloClient.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ApolloClient/Pods-ApolloClient.debug.xcconfig"; sourceTree = "<group>"; };
 		2FF414D3CCEE7C72CB1ECDDF /* Pods_ApolloClient.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ApolloClient.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		52BE1808E79AC4E579958212 /* Pods-ApolloClient.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ApolloClient.release.xcconfig"; path = "Pods/Target Support Files/Pods-ApolloClient/Pods-ApolloClient.release.xcconfig"; sourceTree = "<group>"; };
+		F21178A2213DE3CE00AD5B70 /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		F28216D4213E13A900EB1177 /* Posts.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = Posts.graphql; sourceTree = "<group>"; };
 		F2E6AFE8213DD2C70050FC07 /* ApolloClient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ApolloClient.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F2E6AFEB213DD2C70050FC07 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F2E6AFED213DD2C70050FC07 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -26,6 +31,7 @@
 		F2E6AFF2213DD2C90050FC07 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F2E6AFF5213DD2C90050FC07 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F2E6AFF7213DD2C90050FC07 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F2E6B001213DDA0B0050FC07 /* schema.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = schema.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +63,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		F28216D3213E139400EB1177 /* queries */ = {
+			isa = PBXGroup;
+			children = (
+				F28216D4213E13A900EB1177 /* Posts.graphql */,
+			);
+			path = queries;
+			sourceTree = "<group>";
+		};
 		F2E6AFDF213DD2C70050FC07 = {
 			isa = PBXGroup;
 			children = (
@@ -78,6 +92,9 @@
 		F2E6AFEA213DD2C70050FC07 /* ApolloClient */ = {
 			isa = PBXGroup;
 			children = (
+				F28216D3213E139400EB1177 /* queries */,
+				F2E6B001213DDA0B0050FC07 /* schema.json */,
+				F21178A2213DE3CE00AD5B70 /* API.swift */,
 				F2E6AFEB213DD2C70050FC07 /* AppDelegate.swift */,
 				F2E6AFED213DD2C70050FC07 /* ViewController.swift */,
 				F2E6AFEF213DD2C70050FC07 /* Main.storyboard */,
@@ -96,6 +113,7 @@
 			buildConfigurationList = F2E6AFFA213DD2C90050FC07 /* Build configuration list for PBXNativeTarget "ApolloClient" */;
 			buildPhases = (
 				0C64246750404AC8C13D1489 /* [CP] Check Pods Manifest.lock */,
+				F2E6AFFD213DD3D60050FC07 /* Generate Apollo GraphQL API */,
 				F2E6AFE4213DD2C70050FC07 /* Sources */,
 				F2E6AFE5213DD2C70050FC07 /* Frameworks */,
 				F2E6AFE6213DD2C70050FC07 /* Resources */,
@@ -148,7 +166,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F2E6B002213DDA0B0050FC07 /* schema.json in Resources */,
 				F2E6AFF6213DD2C90050FC07 /* LaunchScreen.storyboard in Resources */,
+				F28216D5213E13A900EB1177 /* Posts.graphql in Resources */,
 				F2E6AFF3213DD2C90050FC07 /* Assets.xcassets in Resources */,
 				F2E6AFF1213DD2C70050FC07 /* Main.storyboard in Resources */,
 			);
@@ -193,6 +213,20 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ApolloClient/Pods-ApolloClient-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		F2E6AFFD213DD3D60050FC07 /* Generate Apollo GraphQL API */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 12;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Generate Apollo GraphQL API";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "APOLLO_FRAMEWORK_PATH=\"$(eval find $FRAMEWORK_SEARCH_PATHS -name \"Apollo.framework\" -maxdepth 1)\"\n\nif [ -z \"$APOLLO_FRAMEWORK_PATH\" ]; then\necho \"error: Couldn't find Apollo.framework in FRAMEWORK_SEARCH_PATHS; make sure to add the framework to your project.\"\nexit 1\nfi\n\ncd \"${SRCROOT}/${TARGET_NAME}\"\n$APOLLO_FRAMEWORK_PATH/check-and-run-apollo-codegen.sh generate $(find . -name '*.graphql') --schema schema.json --output API.swift";
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -201,6 +235,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F2E6AFEE213DD2C70050FC07 /* ViewController.swift in Sources */,
+				F21178A3213DE3CE00AD5B70 /* API.swift in Sources */,
 				F2E6AFEC213DD2C70050FC07 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -1,0 +1,8 @@
+query fetchPosts {
+  post {
+    id
+    userId
+    title
+    body
+  }
+}

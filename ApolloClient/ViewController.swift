@@ -8,18 +8,52 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+typealias Post = FetchPostsQuery.Data.Post?
+
+class ViewController: UITableViewController {
+  
+  var items: [Post]? {
+    didSet {
+      tableView.reloadData()
+    }
+  }
+  
+  override func viewDidAppear(_ animated: Bool) {
+    super.viewDidAppear(animated)
+    title = "Posts"
+  }
 
   override func viewDidLoad() {
     super.viewDidLoad()
-    // Do any additional setup after loading the view, typically from a nib.
+    apollo.fetch(query: FetchPostsQuery()) { response, error in
+      if let response = response,
+        let data = response.data,
+        let posts = data.post {
+        self.items = posts
+      }
+    }
   }
-
-  override func didReceiveMemoryWarning() {
-    super.didReceiveMemoryWarning()
-    // Dispose of any resources that can be recreated.
-  }
-
-
 }
+
+extension ViewController {
+  override func numberOfSections(in tableView: UITableView) -> Int {
+    return 1
+  }
+  
+  override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    if let data = items {
+      return data.count
+    }
+    return 0
+  }
+  
+  override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    let cell = UITableViewCell(style: .default, reuseIdentifier: nil)
+    cell.textLabel?.text = items![indexPath.row]?.title
+    cell.textLabel?.numberOfLines = 0
+    cell.textLabel?.lineBreakMode = .byWordWrapping
+    return cell
+  }
+}
+
 
